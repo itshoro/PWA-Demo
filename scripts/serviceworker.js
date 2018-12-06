@@ -1,7 +1,7 @@
 var CACHE_NAME = "my-cache-v1";
 var cacheUrls = [
     "/",
-    "/styles/main.css",
+    "/style/main.css",
     "/assets/icons/icon512.png",
     "/assets/icons/icon192.png",
 ];
