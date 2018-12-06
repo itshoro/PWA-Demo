@@ -39,6 +39,8 @@ main div {
   transition: -webkit-box-shadow 200ms ease-in-out;
   transition: box-shadow 200ms ease-in-out;
   transition: box-shadow 200ms ease-in-out, -webkit-box-shadow 200ms ease-in-out;
+  grid-row: span 1;
+  grid-column: span 1;
 }
 
 main div:nth-of-type(3n+1) {
@@ -56,7 +58,10 @@ main div:hover {
 }
 
 main div img {
+  display: block;
   -o-object-fit: cover;
      object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 /*# sourceMappingURL=main.css.map */
