@@ -1,0 +1,21 @@
+{
+    "name": "My first Progressive Web App",
+    "short_name": "PWA Demo",
+    "start_url": ".",
+    "theme_color": "#b2092b",
+    "background_color": "#fff",
+    "display": "standalone",
+    "description": "A simple Demo to show PWA functionality",
+    "icons": [
+        {
+            "src": "assets/icons/icon192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/icon512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
