@@ -8,6 +8,21 @@
 
     <link rel="stylesheet" href="style/main.css">
     <link rel="manifest" href="manifest.webmanifest">
+
+    <script>
+        if("serviceWorker" in navigator) {
+            window.addEventListener("load", function() {
+                navigator.serviceWorker.register("scripts/serviceworker.js")
+                .then(function(registration) {
+                    console.log("ServiceWorker registration was sucessfull.")
+                    console.log("Scope", registration.scope);
+                }, function(error) {
+                    console.log("ServiceWorker registration failed: ", error);
+                });
+            });
+        }
+    </script>
+
 </head>
 <body>
     <div class="hero">
