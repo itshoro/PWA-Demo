@@ -1,7 +1,8 @@
 {
-    "name": "My first Progressive Web App",
     "short_name": "PWA Demo",
-    "start_url": ".",
+    "name": "My first Progressive Web App",
+    "start_url": "/PWA_Demo/",
+    "scope": "/PWA_Demo/",
     "theme_color": "#b2092b",
     "background_color": "#fff",
     "display": "standalone",

@@ -1,9 +1,19 @@
-var CACHE_NAME = "my-cache-v1";
+var CACHE_NAME = "my-cache-v2";
 var cacheUrls = [
-    "/",
-    "/style/main.css",
-    "/assets/icons/icon512.png",
-    "/assets/icons/icon192.png",
+    "/PWA_Demo/",
+    "/PWA_Demo/style/main.css",
+    "/PWA_Demo/assets/icons/icon512.png",
+    "/PWA_Demo/assets/icons/icon192.png",
+    "/PWA_Demo/assets/01.jpg",
+    "/PWA_Demo/assets/02.jpg",
+    "/PWA_Demo/assets/03.jpg",
+    "/PWA_Demo/assets/04.jpg",
+    "/PWA_Demo/assets/05.jpg",
+    "/PWA_Demo/assets/06.jpg",
+    "/PWA_Demo/assets/07.jpg",
+    "/PWA_Demo/assets/08.jpg",
+    "/PWA_Demo/assets/09.jpg",
+    "/PWA_Demo/assets/10.jpg"
 ];
 
 self.addEventListener("install", function(event) {
@@ -15,6 +25,15 @@ self.addEventListener("install", function(event) {
             }
         )
     );
+});
+
+self.addEventListener("activate", function(event) {
+    caches.keys().then(function(cacheNames){
+        cacheNames.forEach(function(name) {
+            if(name !== CACHE_NAME)
+                caches.delete(name);
+        })
+    });
 });
 
 self.addEventListener("fetch", function(event) {
