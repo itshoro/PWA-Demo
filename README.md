@@ -28,11 +28,11 @@ This means that when you store your `index.html` and `serviceworker.js` in a sub
 ###### Cache
 When I first got the cache to work correctly I quickly noticed that the cache-first version has it's drawbacks, as you will always get served the cached version of your `index.html`. I found on the internet, that the cache is valid for atleast 24 hours, upon which the service worker will try to find any changes to the PWA. In some cases this is okay, but since this was my first time working with PWAs and the Cache I found these things really helpful:
 
-- The ServiceWorker is invalidated when even only one byte of it is changed when registering a updated version. I noticed that this wouldn't happen for me. I figured that it had something to do with the caching. I had two potential fixes. 
-  - If the user is online and there is atleast one service worker &rarr; remove the service worker and register it normally.
-  - When a serviceworker is successfully registered call `ServiceWorkerRegistration.update()` as it bypasses browser cache
+The ServiceWorker is invalidated when even only one byte of it is changed when registering a updated version. I noticed that this wouldn't happen for me. I figured that it had something to do with the caching. I had two potential fixes. 
+- If the user is online and there is atleast one service worker &rarr; remove the service worker and register it normally.
+- When a serviceworker is successfully registered call `ServiceWorkerRegistration.update()` as it bypasses browser cache.
 
-- Since you have to specify a name for your cache and updating it probably means renaming the cache, here a helpful method to remove any old caches without waiting for it to expire:
+Since you have to specify a name for your cache and updating it probably means renaming the cache, here a helpful method to remove any old caches without waiting for it to expire:
 ```js
     caches.keys().then(function(cacheNames){
         cacheNames.forEach(function(name) {
