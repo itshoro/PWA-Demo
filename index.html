@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PWA Demo</title>
+    <meta name="theme-color" content="#B2092B"/>
 
     <link rel="stylesheet" href="style/main.css">
     <link rel="manifest" href="manifest.webmanifest">
@@ -12,10 +13,13 @@
     <script>
         if("serviceWorker" in navigator) {
             window.addEventListener("load", function() {
-                navigator.serviceWorker.register("scripts/serviceworker.js")
+                navigator.serviceWorker.register("serviceworker.js")
                 .then(function(registration) {
-                    console.log("ServiceWorker registration was sucessfull.")
+                    console.log("ServiceWorker registration was successful.")
                     console.log("Scope", registration.scope);
+
+                    registration.update();
+
                 }, function(error) {
                     console.log("ServiceWorker registration failed: ", error);
                 });
