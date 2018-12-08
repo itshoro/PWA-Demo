@@ -43,6 +43,9 @@ Since you have to specify a name for your cache and updating it probably means r
 ```
 I call this after the `activate` event is fired, as it notifies me that an older version of the service worker should no longer be running.
 
+###### Updating the ServiceWorker
+I stated earlier that we can update the ServiceWorker by calling the `update()` method. However this wasn't the case for me. I saw that a new ServiceWorker was actually being installed, however it never got activated. I noticed, that you have to completely change the URL once (go to google and come back for example) after that the new ServiceWorker is activated with the old one being discarded.
+
 #### manifest.webmanifest
 ###### File Extension
 The Google Developer still only list a `manifest.json` file as a requirement for a PWA. However when looking at the [W3C specification](https://w3c.github.io/manifest/#media-type-registration) they also allow a `.webmanifest` file extension. While the content of both files is the same I think it would be better to use the later extension, as I think that they could potentially drop the json extension when PWAs become more widespread. Though I also imagine that browsers will keep the support for json manifests, if that should ever happen.
