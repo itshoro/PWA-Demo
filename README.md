@@ -44,7 +44,7 @@ Since you have to specify a name for your cache and updating it probably means r
 I call this after the `activate` event is fired, as it notifies me that an older version of the service worker should no longer be running.
 
 ###### Updating the ServiceWorker
-I stated earlier that we can update the ServiceWorker by calling the `update()` method. However this wasn't the case for me. I saw that a new ServiceWorker was actually being installed, however it never got activated. I noticed, that you have to completely change the URL once (go to google and come back for example) after that the new ServiceWorker is activated with the old one being discarded.
+I stated earlier that we can update the ServiceWorker by calling the `update()` method. However this wasn't the case in Google Chrome. I saw that a new ServiceWorker was actually being installed, however it never got activated. I noticed, that you have to completely change the URL once (go to google and come back for example) after that the new ServiceWorker is activated with the old one being discarded. This didn't occour when using Firefox.
 
 #### manifest.webmanifest
 ###### File Extension
